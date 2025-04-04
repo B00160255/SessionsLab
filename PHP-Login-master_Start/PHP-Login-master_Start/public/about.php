@@ -1,3 +1,10 @@
+<?php session_start();
+if($_SESSION['Active'] == false){
+  header("location:login.php");
+  exit;
+}
+?>
+
 <?php require_once '../template/header.php';?>
   
   <body>
@@ -17,7 +24,7 @@
             <h1>Title </h1>
             <p class="lead">This is where we will put the logout button</p>
 
-            <form action="" method="post" name="Logout_Form" class="form-signin">
+            <form action="logout.php" method="post" name="Logout_Form" class="form-signin">
                 <button name="Submit" value="Logout" class="button" type="submit">Log out</button>
             </form>
         </div>
